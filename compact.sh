@@ -17,7 +17,7 @@ for file in $*; do
     if [ -f "$file" ]; then
         suffix="${file##*.}"
         if [[ ${suffices[@]} =~ $suffix ]]; then
-            grep -Ev $pattern ${file} | grep '[[:graph:]]' -
+            grep -Ev $pattern ${file} | grep '[[:graph:]]'
         else
             echo "$file: unsupported file type"
         fi

@@ -19,7 +19,7 @@ for file in $*; do
     if [ -f "$file" ]; then
         suffix="${file##*.}"
         if [[ ${suffices[@]} =~ $suffix ]]; then
-            count=`grep -Ev $pattern ${file} | grep -c '[[:graph:]]' -`
+            count=`grep -Ev $pattern ${file} | grep -c '[[:graph:]]'`
             echo "$file: $count"
             total=`expr $total + $count`
         else
